@@ -4,9 +4,9 @@ var burger = require("../models/burger.js")
 
 module.exports = function (app) {
     app.get('/',function(req,res){
-        res.json(burger.selectAll)
+        console.log(burger.test);
         console.log("hit the get route")
-        console.log(burger)
+        // burger.selectAll();
     })
     app.post('/',function(req,res){
         res.json(burger.insert("Mushroom"))

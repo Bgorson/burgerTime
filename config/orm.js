@@ -1,13 +1,17 @@
 var connection = require("../config/connection")
 
 var orm = {
-            
+    test: "test",        
     selectAll : function () {
-            connection.query("SELECT * FROM burgers")
+            return connection.query("SELECT * FROM burgers", function (err, res){
+                console.log('returning query')
+                console.log(res);
+            })
     
     },
         insertOne : function () {
-            connection.query("INSERT INTO burgers (burger_name,devoured) VALUES ('Cheese Burger2', false)")
+            console.log("adding burger")
+            return connection.query("INSERT INTO burgers (burger_name,devoured) VALUES ('Cheese Burger2', false)")
         }, 
 
         updateOne : function () {

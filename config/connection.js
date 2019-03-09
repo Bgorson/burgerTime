@@ -2,7 +2,7 @@ const mysql = require("mysql");
 const keys = require("../login.js")
 const password = keys.mySQL.pass
 // Creates connection to MYSQL Database uses .env for password
-module.exports = mysql.createConnection({
+var connection = mysql.createConnection({
     host: "localhost",
 
     // Your port; if not 3306
@@ -13,5 +13,7 @@ module.exports = mysql.createConnection({
 
     // Your password
     password: password,
-    database: "burgers_DB"
+    database: "burgers_db"
 });
+
+module.exports = connection;
