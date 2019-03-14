@@ -13,11 +13,12 @@ router.get("/", function(req, res) {
     });
   });
 
-  router.post("/api/burgers",function(req,res){
+router.post("/api/burgers",function(req,res){
     burger.insertOne([req.body.name,0],function(result){
       res.json({id: result.insertId})
     })
   })
+
 router.put("/api/burgers/:id", function(req,res){
   var name = "id = " + req.params.id;
   console.log(name)
@@ -30,5 +31,7 @@ router.put("/api/burgers/:id", function(req,res){
     }
   })
 })
+//matching route to ----------------> Directory
+router.use('/assets', express.static('assets/'))
 
 module.exports = router;

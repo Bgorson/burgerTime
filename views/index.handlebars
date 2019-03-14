@@ -1,5 +1,5 @@
 <div class = "container d-flex justify-content-center">
-<p>Placeholder Image</p>
+<img src= "/assets/img/burger.jpg">
 </div>
 <div class = "container d-flex justify-content-center">
 <h1>Burger Eating</h1>
@@ -13,8 +13,12 @@
                 {{#each burgers}}
 
                   {{#unless this.devoured}}
-                 <p>{{this.id}}.{{this.burger_name}}</p>
-                 <button class ="devour" data-id= "{{this.id}}">Eat Me</button> 
+                  <div class = "burgerDiv">
+                  <p class= "burgerName">{{this.id}}.{{this.burger_name}}</p>
+                  <button class ="devour btn btn-warning" data-id= "{{this.id}}">Eat Me</button>
+                  <br>
+                  </div>
+                  
                   {{/unless}}
 
                 {{/each}}
@@ -25,7 +29,9 @@
           <ul>
           {{#each burgers}}
                 {{#if this.devoured}}
-                 <p>{{this.id}}.{{this.burger_name}}</p>
+                 <div class = "burgerDiv">
+                 <p>{{this.burger_name}}</p>
+                 </div>
                 {{/if}}
             {{/each}}
           </ul>
@@ -37,13 +43,13 @@
 <div class = "container d-flex justify-content-center">
 <form class="create-form">
 
-  <div class="form-group">
+  <div class="form-group burgerName">
     <label for="burger">Burger Name:</label>
     <input type="text" id="burger" name="name">
 
 
 
-  <button id= "submit" type="submit">Add Burger</button>
+  <button id= "submit" class= "btn btn-primary" type="submit">Add Burger</button>
 </form>
   </div>
 </div>
