@@ -27,11 +27,3 @@ app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
-
-/* to add:
-One side is the "if devoured =0" the other side is if devoured =1
-When someone clicks the button, it send mysql request to update that entry and 
-reloads the page to display the new result or maybe just changes it?
-
-Add the "adding" functionality. When someone adds a burger, it gets added to DB
-*/
