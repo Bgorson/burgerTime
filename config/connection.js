@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 const keys = require("../login.js")
 const password = keys.mySQL.pass
-// Creates connection to MYSQL Database uses .env for password
+// Creates connection to MYSQL Database
 var connection = mysql.createConnection({
     host: "us-cdbr-iron-east-03.cleardb.net",
 

@@ -1,3 +1,4 @@
+//create burger object using ORM
 var orm = require("../config/orm")
 
 

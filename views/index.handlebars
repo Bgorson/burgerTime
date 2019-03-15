@@ -10,6 +10,7 @@
     <div class = "row justify-content-between">
         <div class = "col-4">
             <ul>
+              {{!-- goes through burger object and shows false devoured objects --}}
                 {{#each burgers}}
 
                   {{#unless this.devoured}}
@@ -28,6 +29,7 @@
         <div class = "col-4">
           <ul>
           {{#each burgers}}
+          {{!-- Goes through burger object and show only true devoured objects --}}
                 {{#if this.devoured}}
                  <div class = "burgerDiv">
                  <p>{{this.burger_name}}</p>
@@ -59,11 +61,13 @@
 
 
 <script>
+  //submit click event
 $("#submit").on("click", function(event){
   event.preventDefault();
   var newBurger = {
     name: $("#burger").val().trim()
   }
+  //makes a post to ajax route
   $.ajax("/api/burgers",{
     type:'POST',
     data:newBurger
@@ -74,12 +78,13 @@ $("#submit").on("click", function(event){
     }
   )
   })
-
+  //devour button click event
   $(".devour").on("click", function(){
     var id = $(this).data("id");
     $.ajax("/api/burgers/" +id, {
       type:"PUT"
     }).then(
+      //PUT method at api route
       function(){
       console.log("updated devour")
       location.reload();
