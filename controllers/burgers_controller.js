@@ -31,7 +31,7 @@ router.put("/api/burgers/:id", function(req,res){
     }
   })
 })
-//matching route to ----------------> Directory
-router.use('/', express.static('assets/'))
+
+
 
 module.exports = router;
